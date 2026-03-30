@@ -20,7 +20,7 @@ O banco de dados PostgreSQL foi configurado para rodar de forma isolada em um co
 
 No terminal (com o Docker Desktop em execução), navegue até a raiz deste projeto e execute os seguintes comandos:
 
-1. **Construir a imagem Docker e iniciar o container:**
+**Construir a imagem Docker e iniciar o container:**
    ```bash
    docker build -t docker_simcc .
    docker run -d --name docker_simcc -p 5437:5432 docker_simcc
