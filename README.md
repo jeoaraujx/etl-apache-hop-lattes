@@ -21,10 +21,11 @@ O banco de dados PostgreSQL foi configurado para rodar de forma isolada em um co
 No terminal (com o Docker Desktop em execução), navegue até a raiz deste projeto e execute os seguintes comandos:
 
 **Construir a imagem Docker e iniciar o container:**
-   ```bash
-   docker build -t docker_simcc .
-   docker run -d --name docker_simcc -p 5437:5432 docker_simcc
-   ```
+
+```bash
+docker build -t docker_simcc .
+docker run -d --name docker_simcc -p 5437:5432 docker_simcc
+```
 
 ### Criação das Tabelas
 
@@ -96,3 +97,30 @@ Como Executar
 Dashboard interativo no Power BI conectado diretamente ao PostgreSQL, com filtro de ano (2007–2024) e os seguintes visuais:
 
 ![Tela do Dashboard](Src/Power%20Bi.png)
+
+## 🔎 Busca Semântica Textual (Full Text Search)
+
+WITH unaccent, portuguese_stem;
+
+````
+
+---
+
+### 🔍 Exemplos de Busca
+
+#### Busca simples
+```sql
+SELECT nomeartigo
+FROM producoes
+WHERE to_tsvector('pt_br', nomeartigo)
+@@ to_tsquery('pt_br', 'dengue');
+````
+
+#### Busca combinada (AND)
+
+```sql
+SELECT nomeartigo
+FROM producoes
+WHERE to_tsvector('pt_br', nomeartigo)
+@@ to_tsquery('pt_br', 'covid & bahia');
+```
