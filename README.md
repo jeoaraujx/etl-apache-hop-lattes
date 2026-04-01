@@ -20,7 +20,7 @@ O banco de dados PostgreSQL foi configurado para rodar de forma isolada em um co
 
 No terminal (com o Docker Desktop em execução), navegue até a raiz deste projeto e execute os seguintes comandos:
 
-1. **Construir a imagem Docker e iniciar o container:**
+**Construir a imagem Docker e iniciar o container:**
    ```bash
    docker build -t docker_simcc .
    docker run -d --name docker_simcc -p 5437:5432 docker_simcc
@@ -77,11 +77,11 @@ Como Executar
 
 ### Pesquisadores
 
-![Pipeline Pesquisadores](src/Dados_Pesquisadores_Varios.png)
+![Pipeline Pesquisadores](Src/Dados_Pesquisadores_Varios.png)
 
 ### Producoes
 
-![Pipeline Producoes](src/Dados_producoes_pesquisadores_varios.png)
+![Pipeline Producoes](Src/Dados_producoes_pesquisadores_varios.png)
 
 ### Configuração da conexão no HOP
 
@@ -95,4 +95,4 @@ Como Executar
 
 Dashboard interativo no Power BI conectado diretamente ao PostgreSQL, com filtro de ano (2007–2024) e os seguintes visuais:
 
-![Tela do Dashboard](src/Power%20Bi.png)
+![Tela do Dashboard](Src/Power%20Bi.png)
