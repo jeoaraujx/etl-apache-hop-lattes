@@ -100,21 +100,13 @@ Dashboard interativo no Power BI conectado diretamente ao PostgreSQL, com filtro
 
 ## 🔎 Busca Semântica Textual (Full Text Search)
 
-WITH unaccent, portuguese_stem;
-
-````
-
----
-
-### 🔍 Exemplos de Busca
-
 #### Busca simples
 ```sql
 SELECT nomeartigo
 FROM producoes
 WHERE to_tsvector('pt_br', nomeartigo)
 @@ to_tsquery('pt_br', 'dengue');
-````
+```
 
 #### Busca combinada (AND)
 
